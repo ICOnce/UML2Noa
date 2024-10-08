@@ -1,13 +1,14 @@
 ﻿using PizzaLibrary.Interfaces;
+using PizzaLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PizzaLibrary.Models
+namespace PizzaLibrary.Services
 {
-    internal class MenuRepository : IMenuRepository
+    public class MenuRepository : IMenuRepository
     {
         public int Count => throw new NotImplementedException();
 

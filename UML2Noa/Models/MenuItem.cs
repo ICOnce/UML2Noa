@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PizzaLibrary.Models
 {
-    internal class MenuItem : IMenuItem
+    public class MenuItem : IMenuItem
     {
         public string Description { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

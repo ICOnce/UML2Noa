@@ -9,12 +9,41 @@ namespace PizzaLibrary.Models
 {
     public class Customer : ICustomer
     {
-        public string Address { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool ClubMember { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        private int _id = 0;
+        private static int counter = 0;
 
-        public int Id => throw new NotImplementedException();
+        #region Properties
+        public string Address { get; set; }
+        public bool ClubMember { get; set; }
 
-        public string Mobile { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Id
+        {
+            get 
+            {
+                return _id;
+            }
+        }
+        #endregion
+
+        public string Mobile { get; set; }
+        public string Name { get; set; }
+
+        public Customer(string name, string mobile, string address)
+        {
+            Name = name;
+            Mobile = mobile;
+            Address = address;
+            ClubMember = false;
+            _id = counter;
+            counter++;
+        }
+
+        public override string ToString()
+        {
+            return $"ID: {Id} Name: {Name}\n" +
+                $"   Mobile: {Mobile}\n" +
+                $"   Address: {Address}\n" +
+                $"   IsClubMember: {ClubMember}";
+        }
     }
 }

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PizzaLibrary.Interfaces;
+using PizzaLibrary.Models;
 
-namespace PizzaLibrary.Models
+namespace PizzaLibrary.Services
 {
-    internal class CustomerRepository : ICustomerRepository
+    public class CustomerRepository : ICustomerRepository
     {
         public int Count => throw new NotImplementedException();
 
