@@ -10,31 +10,47 @@ namespace PizzaLibrary.Services
 {
     public class CustomerRepository : ICustomerRepository
     {
-        public int Count => throw new NotImplementedException();
+        private Dictionary<string, Customer> _customers;
+        public int Count
+        {
+            get { return _customers.Count; }
+        }
+
+        public CustomerRepository()
+        {
+            _customers = MockData.CustomerData;
+        }
 
         public void AddCustomer(Customer customer)
         {
-            throw new NotImplementedException();
+            if (!_customers.ContainsKey(customer.Mobile))
+            {
+                _customers.Add(customer.Mobile, customer);
+            }
         }
 
         public List<Customer> GetAll()
         {
-            throw new NotImplementedException();
+            return _customers.Values.ToList();
         }
 
         public Customer GetCustomerByMobile(string mobile)
         {
-            throw new NotImplementedException();
+            return _customers[mobile];
         }
 
         public void PrintAllCustomers()
         {
-            throw new NotImplementedException();
+            foreach(Customer customer in _customers.Values)
+            {
+                Console.WriteLine();
+                customer.ToString();
+            }
         }
 
         public void RemoveCustomer(string mobile)
         {
-            throw new NotImplementedException();
+            _customers.Remove(mobile);
         }
     }
 }
