@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-internal class ICustomer
+namespace PizzaLibrary.Models
 {
+    public class Customer : ICustomer
+    {
+    }
 }

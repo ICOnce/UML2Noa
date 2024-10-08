@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UML2Noa", "UML2Noa\UML2Noa.csproj", "{6B7D024B-5D4B-4023-8864-A34E900604E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaLibrary", "UML2Noa\PizzaLibrary.csproj", "{6B7D024B-5D4B-4023-8864-A34E900604E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaLibrary", "PizzaLibrary\PizzaLibrary.csproj", "{0E06DA72-22C8-47CD-AA6A-5F8191CD1A3B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UML2Noa", "PizzaLibrary\UML2Noa.csproj", "{0E06DA72-22C8-47CD-AA6A-5F8191CD1A3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
