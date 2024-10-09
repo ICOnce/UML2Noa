@@ -52,5 +52,15 @@ namespace PizzaLibrary.Services
         {
             _customers.Remove(mobile);
         }
+
+        public override string ToString()
+        {
+            string result = $"{Count} customers in repository";
+            foreach (Customer customer in _customers.Values)
+            {
+                result += "\n, " + customer.ToString();
+            }
+            return result;
+        }
     }
 }

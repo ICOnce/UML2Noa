@@ -10,7 +10,7 @@ namespace PizzaLibrary.Models
     public class Customer : ICustomer
     {
         private int _id = 0;
-        private static int counter = 0;
+        public static int counter = 0;
 
         #region Properties
         public string Address { get; set; }
