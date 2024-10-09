@@ -13,8 +13,8 @@ namespace PizzaTest
         {
             Customer.counter = 0;
             MockData.Reset();
-            CustomerRepository cRepo = new CustomerRepository();
-            MenuRepository menuRepo = new MenuRepository();
+            cRepo = new CustomerRepository();
+            menuRepo = new MenuRepository();
         }
 
         [TestMethod]
@@ -23,12 +23,14 @@ namespace PizzaTest
             //Arrange
             TestSetup();
 
+            //Act
+
             //Assert
             Assert.AreEqual(4, cRepo.Count);
         }
 
         [TestMethod]
-        public void AddMenuItem()
+        public void AddCust()
         {
             //Arrange
             TestSetup();
@@ -44,7 +46,7 @@ namespace PizzaTest
         }
 
         [TestMethod]
-        public void GetALlCust()
+        public void GetAllCust()
         {
             //Arrange
             TestSetup();
@@ -78,12 +80,15 @@ namespace PizzaTest
         [TestMethod]
         public void RemoveCust()
         {
+            //Arrange
             TestSetup();
 
+            //Act
             int beforeCount = cRepo.Count;
             cRepo.RemoveCustomer("12121212");
             int afterCount = cRepo.Count;
 
+            //Assert
             Assert.AreEqual(beforeCount, afterCount + 1);
         }
     }
