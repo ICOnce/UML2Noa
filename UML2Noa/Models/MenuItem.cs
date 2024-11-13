@@ -10,9 +10,8 @@ namespace PizzaLibrary.Models
 {
     public class MenuItem : IMenuItem
     {
-        //According to the diagram this should be here, but this is already a thing
         private int _no;
-        private static int counter;
+        public static int counter;
 
         public string Description { get; set; }
         public string Name { get; set; }

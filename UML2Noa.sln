@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaLibrary", "UML2Noa\Piz
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UML2Noa", "PizzaLibrary\UML2Noa.csproj", "{0E06DA72-22C8-47CD-AA6A-5F8191CD1A3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaTest", "PizzaTest\PizzaTest.csproj", "{D5E7AA07-C027-4A94-9EF2-44704A9380C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaTest", "PizzaTest\PizzaTest.csproj", "{D5E7AA07-C027-4A94-9EF2-44704A9380C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleMenu", "ConsoleMenu\ConsoleMenu.csproj", "{B5A59AD9-A7FA-42DB-AFAE-8806C782E442}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{D5E7AA07-C027-4A94-9EF2-44704A9380C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5E7AA07-C027-4A94-9EF2-44704A9380C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5E7AA07-C027-4A94-9EF2-44704A9380C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5A59AD9-A7FA-42DB-AFAE-8806C782E442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5A59AD9-A7FA-42DB-AFAE-8806C782E442}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5A59AD9-A7FA-42DB-AFAE-8806C782E442}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5A59AD9-A7FA-42DB-AFAE-8806C782E442}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

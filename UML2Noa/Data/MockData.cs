@@ -15,15 +15,14 @@ public static class MockData
     private static List<MenuItem> _menuItemData =
         new List<MenuItem>()
         {
-            //new menuitem("margherita", 85, "tomat, ost", menutype.pizzeclasssiche),
-            //new menuitem("vesuvio", 95, "tomat, ost & skinke", menutype.pizzeclasssiche),
-            //new menuitem("capricciosa", 98, "tomat, ost, skinke & champignon", menutype.pizzeclasssiche),
-            //new menuitem("calzone", 98, "indbagt pizza med tomat, ost, skinke & champignon", menutype.pizzeclasssiche),
-            //new menuitem("quattro stagioni", 98, "tomat, ost, skinke, champignon, rejer & paprika", menutype.pizzeclasssiche),
-            //new menuitem("marinara", 97, "tomat, ost, rejer, muslinger & hvidløg", menutype.pizzeclasssiche),
-            //new menuitem("vegetariana", 98, "tomat, ost & grønsager", menutype.pizzeclasssiche),
-            //new menuitem("italiana", 97, "tomat, ost, løg & kødsauce", menutype.pizzeclasssiche)
-
+            new MenuItem("Margherita", 85, "Tomat, ost", MenuType.PIZZECLASSSICHE),
+            new MenuItem("Vesuvio", 95, "Tomat, ost & skinke", MenuType.PIZZECLASSSICHE),
+            new MenuItem("Capricciosa", 98, "Tomat, ost, skinke & champignon", MenuType.PIZZECLASSSICHE),
+            new MenuItem("Calzone", 98, "Indbagt pizza med tomat, ost, skinke & champignon", MenuType.PIZZECLASSSICHE),
+            new MenuItem("Quattro Stagioni", 99, "Tomat, ost, skinke, champignon, rejer & paprika", MenuType.PIZZECLASSSICHE),
+            new MenuItem("Marinara", 97, "Tomat, ost, rejer, muslinger & hvidløg", MenuType.PIZZECLASSSICHE),
+            new MenuItem("Vegetariana", 98, "Tomat, ost & grønsager", MenuType.PIZZECLASSSICHE),
+            new MenuItem("Italiana", 97, "Tomat, ost, løg & kødsauce", MenuType.PIZZECLASSSICHE)
         };
     #endregion
 
@@ -53,14 +52,14 @@ public static class MockData
         _menuItemData =
         new List<MenuItem>()
         {
-            //new menuitem("margherita", 85, "tomat, ost", menutype.pizzeclasssiche),
-            //new menuitem("vesuvio", 95, "tomat, ost & skinke", menutype.pizzeclasssiche),
-            //new menuitem("capricciosa", 98, "tomat, ost, skinke & champignon", menutype.pizzeclasssiche),
-            //new menuitem("calzone", 98, "indbagt pizza med tomat, ost, skinke & champignon", menutype.pizzeclasssiche),
-            //new menuitem("quattro stagioni", 98, "tomat, ost, skinke, champignon, rejer & paprika", menutype.pizzeclasssiche),
-            //new menuitem("marinara", 97, "tomat, ost, rejer, muslinger & hvidløg", menutype.pizzeclasssiche),
-            //new menuitem("vegetariana", 98, "tomat, ost & grønsager", menutype.pizzeclasssiche),
-            //new menuitem("italiana", 97, "tomat, ost, løg & kødsauce", menutype.pizzeclasssiche)
+            new MenuItem("margherita", 85, "tomat, ost", MenuType.PIZZECLASSSICHE),
+            new MenuItem("vesuvio", 95, "tomat, ost & skinke", MenuType.PIZZECLASSSICHE),
+            new MenuItem("capricciosa", 98, "tomat, ost, skinke & champignon", MenuType.PIZZECLASSSICHE),
+            new MenuItem("calzone", 98, "indbagt pizza med tomat, ost, skinke & champignon", MenuType.PIZZECLASSSICHE),
+            new MenuItem("quattro stagioni", 99, "tomat, ost, skinke, champignon, rejer & paprika", MenuType.PIZZECLASSSICHE),
+            new MenuItem("marinara", 97, "tomat, ost, rejer, muslinger & hvidløg", MenuType.PIZZECLASSSICHE),
+            new MenuItem("vegetariana", 98, "tomat, ost & grønsager", MenuType.PIZZECLASSSICHE),
+            new MenuItem("italiana", 97, "tomat, ost, løg & kødsauce", MenuType.PIZZECLASSSICHE)
 
         };
 

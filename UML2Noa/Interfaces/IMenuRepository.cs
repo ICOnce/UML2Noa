@@ -13,6 +13,7 @@ namespace PizzaLibrary.Interfaces
         List<MenuItem> GetAll();
         void AddMenuItem(MenuItem menuItem);
         MenuItem GetMenuItemByNo(int no);
+        MenuItem MostExpensivePizza();
         void RemoveMenuItem(int no);
 
         void PrintAllMenuItems();

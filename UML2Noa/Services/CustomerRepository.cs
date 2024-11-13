@@ -16,9 +16,9 @@ namespace PizzaLibrary.Services
             get { return _customers.Count; }
         }
 
-        public CustomerRepository()
+        public CustomerRepository(Dictionary<string, Customer> customers)
         {
-            _customers = MockData.CustomerData;
+            _customers = customers;
         }
 
         public void AddCustomer(Customer customer)
@@ -32,6 +32,16 @@ namespace PizzaLibrary.Services
         public List<Customer> GetAll()
         {
             return _customers.Values.ToList();
+        }
+
+        public List<Customer> GetAllMembers()
+        {
+            List<Customer> result = new List<Customer>();
+            foreach (Customer customer in _customers.Values)
+            {
+                if (customer.ClubMember) result.Add(customer);
+            }
+            return result;
         }
 
         public Customer GetCustomerByMobile(string mobile)

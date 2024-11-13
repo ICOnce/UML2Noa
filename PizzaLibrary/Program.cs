@@ -13,7 +13,7 @@ internal class Program
         Console.WriteLine("Hello, World!");
         Customer c1 = new Customer("Bob", "69696969", "Sex St. 69");
         Console.WriteLine(c1.ToString());
-        CustomerRepository cRepo = new CustomerRepository();
+        CustomerRepository cRepo = new CustomerRepository(MockData.CustomerData);
         cRepo.AddCustomer(c1);
         //cRepo.RemoveCustomer("12121212");
         Console.WriteLine(cRepo.Count);
