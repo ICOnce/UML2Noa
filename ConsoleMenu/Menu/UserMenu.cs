@@ -5,7 +5,7 @@ using PizzaLibrary.Models;
 
 public class UserMenu
 {
-    private static string mainMenuChoices = "\t1.Vis Pizzamenu\n\t2.Vis Kunder\n\t3.Add Customer\n\t4. Add menu item\n\tQ.Afslut\n\n\tIndtast valg:";
+    private static string mainMenuChoices = "\t1.Vis Pizzamenu\n\t2.Vis Kunder\n\t3.Add Customer\n\t4.Add menu item\n\tQ.Afslut\n\n\tIndtast valg:";
 
     private CustomerRepository _customerRepository = new CustomerRepository(MockData.CustomerData);
     private MenuRepository _menuItemRepository = new MenuRepository(MockData.MenuItemData);
@@ -85,8 +85,12 @@ public class UserMenu
                         case "7":
                             mt = MenuType.TILBEHØR;
                             break;
+                        default:
+                            Console.WriteLine("Not a valid number");
+                            break;
                     }
                     MenuItem nw = new MenuItem(itemName, price, desc, mt);
+                    _menuItemRepository.AddMenuItem(nw);
                     break;
                 default:
                     Console.WriteLine(mainMenuChoices);

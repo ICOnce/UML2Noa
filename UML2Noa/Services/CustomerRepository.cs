@@ -19,6 +19,10 @@ namespace PizzaLibrary.Services
         public CustomerRepository(Dictionary<string, Customer> customers)
         {
             _customers = customers;
+        }        
+        public CustomerRepository()
+        {
+            _customers = MockData.CustomerData;
         }
 
         public void AddCustomer(Customer customer)
@@ -53,8 +57,8 @@ namespace PizzaLibrary.Services
         {
             foreach(Customer customer in _customers.Values)
             {
-                Console.WriteLine();
-                customer.ToString();
+                Console.WriteLine(customer.ToString());
+                
             }
         }
 

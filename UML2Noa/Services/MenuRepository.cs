@@ -50,12 +50,15 @@ namespace PizzaLibrary.Services
         public MenuItem MostExpensivePizza()
         {
             MenuItem temp;
-            temp = GetMenuItemByNo(0);
+            temp = new MenuItem("Filler", 0, "Filler", MenuType.PIZZECLASSSICHE);
             foreach (MenuItem item in _menuItemList)
             {
-                if (item.Price > temp.Price)
+                if (item.TheMenuType == MenuType.PIZZECLASSSICHE || item.TheMenuType == MenuType.PIZZESPECIALI)
                 {
-                    temp = item;
+                    if (item.Price > temp.Price)
+                    {
+                        temp = item;
+                    }
                 }
             }
             return temp;
