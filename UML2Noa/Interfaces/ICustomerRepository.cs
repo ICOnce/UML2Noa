@@ -15,6 +15,7 @@ namespace PizzaLibrary.Interfaces
         Customer GetCustomerByMobile(string mobile);
         void RemoveCustomer(string mobile);
         void PrintAllCustomers();
+        void EditCustomer(string mobile, string? name, string? address, bool? member);
         List<Customer> GetAllMembers();
 
     }

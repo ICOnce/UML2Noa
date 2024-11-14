@@ -62,6 +62,14 @@ namespace PizzaLibrary.Services
             }
         }
 
+        public void EditCustomer(string mobile, string? name, string? address, bool? member)
+        {
+            Customer c = _customers[mobile];
+            if (name != null) c.Name = name;
+            if (address != null) c.Address = address;
+            if (member != null) c.ClubMember = (bool)member;
+        }
+
         public void RemoveCustomer(string mobile)
         {
             _customers.Remove(mobile);

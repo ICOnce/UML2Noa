@@ -37,6 +37,12 @@ namespace PizzaLibrary.Models
             _id = counter;
             counter++;
         }
+        
+        public Customer()
+        {
+            _id = counter;
+            counter++;
+        }
 
         public override string ToString()
         {
