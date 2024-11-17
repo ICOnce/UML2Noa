@@ -32,6 +32,12 @@ namespace PizzaLibrary.Models
             counter++;
         }
 
+        public MenuItem()
+        {
+            _no = counter;
+            counter++;
+        }
+
         public override string ToString()
         {
             return $"{Name}\n" +

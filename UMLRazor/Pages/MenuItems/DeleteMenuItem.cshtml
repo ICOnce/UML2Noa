@@ -1,0 +1,44 @@
+﻿@page
+@model UMLRazor.Pages.MenuItems.DeleteMenuItemModel
+@{
+
+}
+@{
+    ViewData["Title"] = "Delete Item";
+}
+<h1>Delete Customer</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="@Model.Item.No" class="control-label"></label>
+                <input asp-for="@Model.Item.No" class="form-control" readonly="true" />
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Item.Name" class="control-label"></label>
+                <input asp-for="@Model.Item.Name" class="form-control" readonly="true" />
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Item.TheMenuType" class="control-label"></label>
+                <input asp-for="@Model.Item.TheMenuType" class="form-control" readonly="true" />
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Item.Description" class="control-label"></label>
+                <input asp-for="@Model.Item.Description" class="form-control" readonly="true" />
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Item.Price" class="control-label"></label>
+                @* <input asp-for="@Model.Customer.ClubMember" class="form-control"></input> *@
+                <input value="@(Model.Item.Price)" class="form-control" readonly="true"></input>
+            </div>
+            <div class="formgroup">
+                <input type="submit" value="Delete" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <div>
+        <a asp-page="Index">Back to List</a>
+    </div>
+</div>
+
+

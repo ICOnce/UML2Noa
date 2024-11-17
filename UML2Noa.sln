@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaTest", "PizzaTest\Pizz
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleMenu", "ConsoleMenu\ConsoleMenu.csproj", "{B5A59AD9-A7FA-42DB-AFAE-8806C782E442}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMLRazor", "UMLRazor\UMLRazor.csproj", "{5F37A8B6-6341-447A-84DD-30CF7D52F778}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UMLRazor", "UMLRazor\UMLRazor.csproj", "{5F37A8B6-6341-447A-84DD-30CF7D52F778}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

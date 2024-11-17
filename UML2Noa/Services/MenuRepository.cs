@@ -17,6 +17,10 @@ namespace PizzaLibrary.Services
         {
             _menuItemList = menuList;
         }
+        public MenuRepository()
+        {
+            _menuItemList = MockData.MenuItemData;
+        }
 
         public void AddMenuItem(MenuItem menuItem)
         {

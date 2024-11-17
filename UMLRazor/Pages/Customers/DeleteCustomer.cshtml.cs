@@ -25,7 +25,11 @@ namespace UMLRazor.Pages.Customers
 
         public IActionResult OnPost()
         {
-            _customerRepository.RemoveCustomer(Customer.Mobile);
+            if (_customerRepository.GetAll().Contains(_customerRepository.GetCustomerByMobile(Customer.Mobile)))
+            {
+                _customerRepository.RemoveCustomer(Customer.Mobile);
+                Customer.counter--;
+            }
             return RedirectToPage("ShowCustomers");
         }
     }
