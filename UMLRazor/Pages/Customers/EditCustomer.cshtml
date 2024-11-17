@@ -24,12 +24,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="@Model.Customer.Mobile" class="control-label"></label>
-                <input asp-for="@Model.Customer.Mobile" class="form-control" />
+                <input asp-for="@Model.Customer.Mobile" class="form-control" readonly="true" />
             </div>
             <div class="form-group">
                 <label asp-for="@Model.Customer.ClubMember" class="control-label"></label>
                 @* <input asp-for="@Model.Customer.ClubMember" class="form-control"></input> *@
-                <input value="@(Model.Customer.ClubMember?"Er medlem":"Ikke medlem")" class="form-control"></input>
+                <input asp-for="@Model.Customer.ClubMember" type="checkbox"/>
             </div>
             <div class="formgroup">
                 <input type="submit" value="Edit" class="btn btn-primary" />

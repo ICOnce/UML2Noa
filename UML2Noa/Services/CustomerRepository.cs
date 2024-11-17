@@ -67,7 +67,7 @@ namespace PizzaLibrary.Services
             Customer c = _customers[mobile];
             if (name != null) c.Name = name;
             if (address != null) c.Address = address;
-            if (member != null) c.ClubMember = (bool)member;
+            if (member != null) c.ClubMember = (bool) member;
         }
 
         public void RemoveCustomer(string mobile)

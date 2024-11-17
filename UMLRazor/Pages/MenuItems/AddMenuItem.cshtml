@@ -12,7 +12,15 @@
 
     <div class="form-group">
         <label asp-for="@Model._menuType" class="control-label"></label>
-        <input asp-for="@Model._menuType" class="form-control" />
+        <select asp-for="@Model._menuType" select class="form-control">
+            <option>SANDWICHES</option>
+            <option>BRUCHETTA_CROSTINO</option>
+            <option>SALATER</option>
+            <option>PIZZECLASSSICHE</option>
+            <option>PIZZESPECIALI</option>
+            <option>PASTAALFORNO</option>
+            <option>TILBEHØR</option>
+        </select>
     </div>
 
     <div class="form-group">
@@ -21,7 +29,7 @@
     </div>
     <div class="form-group">
         <label asp-for="@Model.Item.Price" class="control-label"></label>
-        <input asp-for="@Model.Item.Price" class="form-control" />
+        <input asp-for="@Model.Item.Price" class="form-control" type="number"/>
     </div>
 
     <div class="formgroup">
