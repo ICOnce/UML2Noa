@@ -24,12 +24,13 @@ namespace PizzaLibrary.Models
             }
         }
         #endregion
-
+        public string CustomerImage { get; set; }
         public string Mobile { get; set; }
         public string Name { get; set; }
 
         public Customer(string name, string mobile, string address)
         {
+            CustomerImage = "default.jpeg";
             Name = name;
             Mobile = mobile;
             Address = address;
@@ -40,6 +41,7 @@ namespace PizzaLibrary.Models
         
         public Customer()
         {
+            CustomerImage = "default.jpeg";
             _id = counter;
             counter++;
         }

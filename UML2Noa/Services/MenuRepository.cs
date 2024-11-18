@@ -89,6 +89,15 @@ namespace PizzaLibrary.Services
             }
         }
 
+        public void EditMenuItem(int no, string name, string description, MenuType theMenuType, double price)
+        {
+            _menuItemList[no].Name = name;
+            _menuItemList[no].Description = description;
+            _menuItemList[no].Price = price;
+            _menuItemList[no].TheMenuType = theMenuType;
+            _menuItemList[no].Price = price;
+        }
+
         public override string ToString()
         {
             string result = $"{Count} elements in MenuRepository\n";
@@ -98,5 +107,6 @@ namespace PizzaLibrary.Services
             }
             return result;
         }
+
     }
 }

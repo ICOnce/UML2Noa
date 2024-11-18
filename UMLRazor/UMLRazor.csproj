@@ -10,4 +10,8 @@
     <ProjectReference Include="..\UML2Noa\PizzaLibrary.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\customerImages\" />
+  </ItemGroup>
+
 </Project>

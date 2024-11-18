@@ -5,23 +5,27 @@ using PizzaLibrary.Models;
 
 namespace UMLRazor.Pages.MenuItems
 {
-    public class AddMenuItemModel : PageModel
+    public class EditMenuItemModel : PageModel
     {
+
         private IMenuRepository _menuRepo;
 
 
         [BindProperty] //Two way binding
-        public string _menuType {  get; set; }
+        public string _menuType { get; set; }
         [BindProperty]
         public MenuItem Item { get; set; }
 
-        public AddMenuItemModel(IMenuRepository menuRepo)
+        public EditMenuItemModel(IMenuRepository menuRepo)
         {
             _menuRepo = menuRepo;
         }
 
-        public void OnGet()
+        public void OnGet(int editMenuItem)
         {
+            MenuItem.counter--;
+            Item = _menuRepo.GetMenuItemByNo(editMenuItem);
+            _menuType = Item.TheMenuType.ToString();
         }
 
         public IActionResult OnPost()
@@ -53,7 +57,7 @@ namespace UMLRazor.Pages.MenuItems
                     Item.TheMenuType = MenuType.TILBEHØR;
                     break;
             }
-            _menuRepo.AddMenuItem(Item);
+            _menuRepo.EditMenuItem(Item.No, Item.Name, Item.Description, Item.TheMenuType, Item.Price);
             return RedirectToPage("ShowMenuItems");
         }
     }

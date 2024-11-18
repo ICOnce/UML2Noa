@@ -20,12 +20,16 @@ namespace UMLRazor.Pages.Customers
         }
         public void OnGet(string editCustomer)
         {
+            Customer.counter--;
             Customer = _customerRepository.GetCustomerByMobile(editCustomer);
         }
 
         public IActionResult OnPost()
         {
-            _customerRepository.EditCustomer(Customer.Mobile, Customer.Name, Customer.Address, Customer.ClubMember);
+            if (_customerRepository.GetAll().Contains(_customerRepository.GetCustomerByMobile(Customer.Mobile)))
+            {
+                _customerRepository.EditCustomer(Customer.Mobile, Customer.Name, Customer.Address, Customer.ClubMember);
+            }
             return RedirectToPage("ShowCustomers");
         }
     }

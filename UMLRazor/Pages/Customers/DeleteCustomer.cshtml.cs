@@ -20,6 +20,7 @@ namespace UMLRazor.Pages.Customers
         }
         public void OnGet(string deleteMobile)
         {
+            Customer.counter--;
             Customer = _customerRepository.GetCustomerByMobile(deleteMobile);
         }
 
@@ -28,7 +29,6 @@ namespace UMLRazor.Pages.Customers
             if (_customerRepository.GetAll().Contains(_customerRepository.GetCustomerByMobile(Customer.Mobile)))
             {
                 _customerRepository.RemoveCustomer(Customer.Mobile);
-                Customer.counter--;
             }
             return RedirectToPage("ShowCustomers");
         }

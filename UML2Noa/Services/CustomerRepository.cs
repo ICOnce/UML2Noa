@@ -50,7 +50,11 @@ namespace PizzaLibrary.Services
 
         public Customer GetCustomerByMobile(string mobile)
         {
-            return _customers[mobile];
+            if (_customers.ContainsKey(mobile))
+            {
+                return _customers[mobile];
+            }
+            else return null;
         }
 
         public void PrintAllCustomers()

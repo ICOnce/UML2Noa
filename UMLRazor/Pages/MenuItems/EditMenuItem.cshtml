@@ -1,0 +1,43 @@
+﻿@page
+@model UMLRazor.Pages.MenuItems.EditMenuItemModel
+@{
+}
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="@Model.Item.Name" class="control-label"></label>
+                <input asp-for="@Model.Item.Name" class="form-control" required="true" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model._menuType" class="control-label"></label>
+                <select asp-for="@Model._menuType" select class="form-control">
+                    <option>SANDWICHES</option>
+                    <option>BRUCHETTA_CROSTINO</option>
+                    <option>SALATER</option>
+                    <option>PIZZECLASSSICHE</option>
+                    <option>PIZZESPECIALI</option>
+                    <option>PASTAALFORNO</option>
+                    <option>TILBEHØR</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.Item.Description" class="control-label"></label>
+                <input asp-for="@Model.Item.Description" class="form-control" required="true" />
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Item.Price" class="control-label"></label>
+                <input asp-for="@Model.Item.Price" class="form-control" type="number" required="true" />
+            </div>
+
+            <div class="formgroup">
+                <input type="submit" value="Edit Item" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <div>
+        <a asp-page="ShowMenuItems">Back to List</a>
+    </div>
+</div>

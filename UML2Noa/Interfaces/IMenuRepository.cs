@@ -15,7 +15,7 @@ namespace PizzaLibrary.Interfaces
         MenuItem GetMenuItemByNo(int no);
         MenuItem MostExpensivePizza();
         void RemoveMenuItem(int no);
-
+        void EditMenuItem(int no, string name, string description, MenuType theMenuType, double price);
         void PrintAllMenuItems();
 
     }

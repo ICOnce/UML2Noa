@@ -20,6 +20,7 @@ namespace UMLRazor.Pages.MenuItems
         }
         public void OnGet(int number)
         {
+            MenuItem.counter--;
             Item = _mRepo.GetMenuItemByNo(number);
         }
 
@@ -28,7 +29,6 @@ namespace UMLRazor.Pages.MenuItems
             if (_mRepo.GetAll().Contains(_mRepo.GetMenuItemByNo(Item.No)))
             {
                 _mRepo.RemoveMenuItem(Item.No);
-                MenuItem.counter--;
             }
             return RedirectToPage("ShowMenuItems");
         }
