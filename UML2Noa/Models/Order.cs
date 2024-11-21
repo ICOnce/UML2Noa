@@ -28,7 +28,6 @@ public class Order : IOrder
 
     public void AddToOrder(OrderLine line)
     {
-        line.Id = _orderLines.Count;
         _orderLines.Add(line);
     }
 

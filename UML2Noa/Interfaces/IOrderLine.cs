@@ -9,7 +9,7 @@ public interface IOrderLine
 {
     int Amount { get; set; }
     string Comment { get; set; }
-    int Id { get; set; }
+    int Id { get; }
     MenuItem Item { get; set; }
 
     void AddExtraAccessory(Accessory accessory);

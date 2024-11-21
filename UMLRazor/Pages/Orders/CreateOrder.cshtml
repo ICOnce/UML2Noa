@@ -13,4 +13,48 @@
     </p>
 </form>
 
+@{
+    if (Model.TheCustomer != null)
+    {
+        <h3>@Model.TheCustomer.Name</h3>
+        <h3>@Model.TheCustomer.Mobile</h3>
+    }
+}
+
 <h1>Add MenuItem to Order</h1>
+
+<form method="post" asp-page-handler="AddToOrder">
+    <label>Menu Items</label>
+    <select id="ChosenMenuItem" name="ChosenMenuItem" asp-for="@Model.ChosenMenuItem"
+    asp-items="@Model.MenuItemSelectList">
+    </select>
+    <input type="number" asp-for="@Model.Amount" />
+    <textarea asp-for="@Model.Comment" cols="120"></textarea>
+    <input type="submit" value="AddToOrder"/>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Comment</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (OrderLine ol in Model.OrderLines)
+        {
+            <tr>
+                <td>@ol.Id</td>
+                <td>@ol.Item.Name</td>
+                <td>@ol.Amount</td>
+                <td>@ol.Comment</td>
+                <td>@ol.SubTotal()</td>
+                <td><a asp-page="EditMenuItem" asp-route-editMenuItem="@ol.Id">Edit</a></td>
+                <td><a asp-page="DeleteMenuItem" asp-route-deleteMenuItem="@ol.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -8,12 +8,16 @@ using System.Threading.Tasks;
 
 public class OrderLine : IOrderLine
 {
-    MenuItem _menuItem;
-    List<Accessory> _accessories;
+    private MenuItem _menuItem;
+    private int _amount;
+    private int _id;
+    private string _comment;
+    private List<Accessory> _accessories;
     private static int _count;
-    public int Amount { get; set; }
-    public string Comment { get; set; }
-    public int Id { get; set; }
+
+    public int Amount { get { return _amount; } set { _amount = value; } }
+    public string Comment { get { return _comment; } set { _comment = value; } }
+    public int Id { get { return _id; } }
     public MenuItem Item { get { return _menuItem; } set { _menuItem = value; } }
 
     public OrderLine(MenuItem menuItem, int amount, string comment)
@@ -22,6 +26,8 @@ public class OrderLine : IOrderLine
         _menuItem = menuItem;
         Amount = amount;
         Comment = comment;
+        _id = _count;
+        _count++;
     }
 
     public void AddExtraAccessory(Accessory accessory)
