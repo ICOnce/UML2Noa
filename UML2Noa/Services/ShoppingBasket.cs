@@ -24,4 +24,18 @@ public class ShoppingBasket : IShoppingBasket
     {
         return _orderLines;
     }
+
+    public void RemoveOrderLine(OrderLine line)
+    {
+        _orderLines.Remove(line);
+    }
+
+    public OrderLine GetOrderLine(int id)
+    {
+        foreach (OrderLine line in _orderLines) 
+        {
+            if (line.Id == id) return line;
+        }
+        return null;
+    }
 }

@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 public interface IShoppingBasket
 {
     void AddOrderLine(OrderLine line);
+    void RemoveOrderLine(OrderLine line);
+    OrderLine GetOrderLine(int id);
     Customer Customer { get; set; }
     List<OrderLine> GetAll();
 }

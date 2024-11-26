@@ -11,14 +11,22 @@ namespace UMLRazor.Pages.Orders
         private ICustomerRepository _cRepo;
         private IMenuRepository _mRepo;
         private IShoppingBasket _basket;
+        private IAccessoryRepository _aRepo;
         [BindProperty]
         public string SearchCustomerMobile { get; set; }
 
         [BindProperty]
         public int ChosenMenuItem { get; set; }
 
+        [BindProperty]
+        public int ChosenExtra {  get; set; }
+
+        [BindProperty]
+        public int OrderLineId {  get; set; }
+
         public Customer TheCustomer { get; set; }
 
+        public List<SelectListItem> ExtraSelectList { get; set; }
         public List<SelectListItem> MenuItemSelectList { get; set; }
 
         [BindProperty]
@@ -29,14 +37,16 @@ namespace UMLRazor.Pages.Orders
 
         public List<OrderLine> OrderLines { get; set; }
 
-        public CreateOrderModel(ICustomerRepository cRepo, IMenuRepository mRepo, IShoppingBasket basket)
+        public CreateOrderModel(ICustomerRepository cRepo, IMenuRepository mRepo, IShoppingBasket basket, IAccessoryRepository aRepo)
         {
             OrderLines = new List<OrderLine>();
             _cRepo = cRepo;
             _mRepo = mRepo;
             _basket = basket;
+            _aRepo = aRepo;
             TheCustomer = _basket.Customer;
             createMenuSelectList();
+            CreateExtraSelectList();
         }
 
         private void createMenuSelectList()
@@ -46,6 +56,16 @@ namespace UMLRazor.Pages.Orders
             foreach (MenuItem item in _mRepo.GetAll())
             {
                 MenuItemSelectList.Add(new SelectListItem(item.Name, item.No + ""));
+            }
+        }
+
+        void CreateExtraSelectList()
+        {
+            ExtraSelectList = new List<SelectListItem>();
+            ExtraSelectList.Add(new SelectListItem("extras", "-1"));
+            foreach (Accessory a in _aRepo.GetAll())
+            {
+                ExtraSelectList.Add(new SelectListItem(a.Name, a.Id + ""));
             }
         }
 
@@ -61,11 +81,11 @@ namespace UMLRazor.Pages.Orders
             {
                 //Return error
             }
+            OrderLines = _basket.GetAll();
         }
 
         public void OnPostAddToOrder()
         {
-            TheCustomer = _basket.Customer;
             if (Amount > 0)
             {
                 MenuItem menuItemToOrder = _mRepo.GetMenuItemByNo(ChosenMenuItem);
@@ -74,8 +94,33 @@ namespace UMLRazor.Pages.Orders
                     OrderLine ol = new OrderLine(menuItemToOrder, Amount, Comment);
                     _basket.AddOrderLine(ol);
                 }
-                OrderLines = _basket.GetAll();
             }
+            OrderLines = _basket.GetAll();
+            TheCustomer = _basket.Customer;
+        }
+
+        public void OnPostAddExtra()
+        {
+            _basket.GetOrderLine(OrderLineId).AddExtraAccessory(_aRepo.GetAccessory(ChosenExtra));
+            OrderLines = _basket.GetAll();
+            TheCustomer = _basket.Customer;
+        }
+        
+        public void OnPostRemoveLine()
+        {
+            _basket.RemoveOrderLine(_basket.GetOrderLine(OrderLineId));
+            OrderLines= _basket.GetAll();
+            TheCustomer = _basket.Customer;
+        }
+
+        public double GetTotal()
+        {
+            double total = 0;
+            foreach (OrderLine line in OrderLines)
+            {
+                total += line.SubTotal();
+            }
+            return total;
         }
     }
 }

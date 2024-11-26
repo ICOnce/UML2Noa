@@ -8,6 +8,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddSingleton<ICustomerRepository, CustomerRepository>();
 builder.Services.AddSingleton<IMenuRepository, MenuRepository>();
 builder.Services.AddSingleton<IShoppingBasket, ShoppingBasket>();
+builder.Services.AddSingleton<IAccessoryRepository, AccessoryRepository>();
+builder.Services.AddSingleton<IOrderRepository, OrderRepository>();
 
 var app = builder.Build();
 

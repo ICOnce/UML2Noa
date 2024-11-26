@@ -9,7 +9,7 @@
 <form methode="post" asp-page-handler="Customer">
     <p>
         Mobile: <input type="text" asp-for="SearchCustomerMobile" />
-        <input type="submit" value="Search customer" />
+        <input type="submit" value="Search customer" class="btn btn-primary" />
     </p>
 </form>
 
@@ -30,7 +30,7 @@
     </select>
     <input type="number" asp-for="@Model.Amount" />
     <textarea asp-for="@Model.Comment" cols="120"></textarea>
-    <input type="submit" value="AddToOrder"/>
+    <input type="submit" value="AddToOrder" class="btn btn-primary" />
 </form>
 
 <table class="table">
@@ -52,9 +52,33 @@
                 <td>@ol.Amount</td>
                 <td>@ol.Comment</td>
                 <td>@ol.SubTotal()</td>
-                <td><a asp-page="EditMenuItem" asp-route-editMenuItem="@ol.Id">Edit</a></td>
-                <td><a asp-page="DeleteMenuItem" asp-route-deleteMenuItem="@ol.Id">Delete</a></td>
+                <td><select id="ChosenExtra" name="ChosenExtra" asp-for="@Model.ChosenExtra" 
+                    asp-items="@Model.ExtraSelectList">
+                </select></td>
+                <td>
+                    <form method="post" asp-page-handler="AddExtra">
+                        <input type="hidden" asp-for="@Model.OrderLineId" value="@ol.Id" />
+                        <button type="submit" value="@ol.Id" name="AddExtra"
+                                class="btn btn-primary">
+                            Add Extra
+                        </button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" asp-page-handler="RemoveLine">
+                        <input type="hidden" asp-for="@Model.OrderLineId" value="@ol.Id" />
+                        <button type="submit" value="@ol.Id" name="RemoveLine"
+                                class="btn btn-danger">
+                            Remove
+                        </button>
+                    </form>
+                </td>
             </tr>
         }
     </tbody>
+    <tfoot>
+        <tr>
+            <td>Total: @Model.GetTotal()</td>
+            </tr>
+    </tfoot>
 </table>

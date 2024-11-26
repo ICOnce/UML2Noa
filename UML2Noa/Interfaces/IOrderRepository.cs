@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 public interface IOrderRepository
 {
-    public int Count {  get; set; }
+    public int Count {  get;}
     List<Order> GetAll();
     void AddOrder(Order order);
     Order GetOrderByID(int id);
